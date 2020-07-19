@@ -8,7 +8,7 @@ db.on('open', ()=>{
     console.log('MongoDB CONECTADO!');
 })
 
-mongoose.connect('mongodb://localhost:27017/servicos', {
+mongoose.connect('mongodb://localhost:27017/financas', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

@@ -9,8 +9,10 @@ const
 
     authVerify = require('./middlewares/authVerify'),
     authRoutes = require('./routes/authRoutes'),
-    usuarioRoutes = require('./routes/usuarioRoutes')
-    
+    usuarioRoutes = require('./routes/usuarioRoutes'),
+    despesasRoutes = require('./routes/despesasRoutes')
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -23,6 +25,7 @@ app.use(cors(corsOptions))
 app.use(authRoutes)// rota de login
 app.use(authVerify) // validacao de token
 app.use('/usuario', usuarioRoutes)
+app.use('/despesas', despesasRoutes)
 
 const port = process.env.SERVER_PORT || 3000;
 app.listen(port, () => {
